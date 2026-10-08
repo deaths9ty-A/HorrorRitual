@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="MonsterProfile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://monsters/monster_profile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "แบบ Chef: มองหา ค้นที่ซ่อนตอนสงสัย"
+patrol_speed = 1.3
+investigate_speed = 2.0
+chase_speed = 5.0
+can_hear = true
+hearing_scale = 0.8
+can_see = true
+sight_range = 11.0
+sight_fov_deg = 100.0
+peek_hidden_distance = 1.6
+lose_target_time = 2.5
+search_time = 9.0
+search_radius = 4.0
+catch_range = 1.2
+anim_idle = "Idle"
+anim_walk = "Walk"
+anim_run = "Jog_Fwd"
+anim_catch = "Push"
+anim_walk_speed = 1.0
+anim_run_speed = 2.8
+anim_sprint_speed = 4.7
+turn_speed = 4.0
+decel = 9.0
+anim_sprint = "Sprint"
+accel = 7.0

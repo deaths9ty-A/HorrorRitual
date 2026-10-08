@@ -1,0 +1,288 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/MetalWalkway014/MetalWalkway014_1K-JPG_Color.jpg" id="1_6hg20"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/MetalWalkway014/MetalWalkway014_1K-JPG_NormalGL.jpg" id="2_jl3ms"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/MetalWalkway014/MetalWalkway014_1K-JPG_Roughness.jpg" id="3_p2rm6"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/CorrugatedSteel007A/CorrugatedSteel007A_1K-JPG_Color.jpg" id="4_qwnbh"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/CorrugatedSteel007A/CorrugatedSteel007A_1K-JPG_NormalGL.jpg" id="5_53ve6"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/CorrugatedSteel007A/CorrugatedSteel007A_1K-JPG_Roughness.jpg" id="6_mu1o8"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/Planks037A/Planks037A_1K-JPG_Color.jpg" id="7_ltmv8"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/Planks037A/Planks037A_1K-JPG_NormalGL.jpg" id="8_lpjrv"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/Planks037A/Planks037A_1K-JPG_Roughness.jpg" id="9_cvgfb"]
+[ext_resource type="Script" path="res://world/kill_zone.gd" id="10_mjr6x"]
+[ext_resource type="PackedScene" path="res://player/player.tscn" id="11_l324a"]
+[ext_resource type="Script" path="res://player/player.gd" id="12_7awh1"]
+[ext_resource type="Script" path="res://world/checkpoint.gd" id="13_eobcl"]
+[ext_resource type="Script" path="res://world/hide_spot.gd" id="14_6rpwb"]
+[ext_resource type="Script" path="res://monsters/path_chaser.gd" id="15_kq1ie"]
+[ext_resource type="PackedScene" path="res://assets/models/quaternius/ual_standard/ual_standard.glb" id="16_7i6l0"]
+[ext_resource type="Script" path="res://world/chase_trigger.gd" id="17_hvjur"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_x3d8e"]
+vertices = PackedVector3Array(0.99999976, 1.6000004, -39.4, 1.0999999, 1.6000004, -39, 2, 1.6000004, -39, 0.6999998, 1.6000004, -39.6, 2, 1.6000004, -41.5, -1.9000001, 1.6000004, -41.5, -1.9000001, 1.6000004, -39.6, 0.99999976, 1.6000004, -38.6, 0.6999998, 1.6000004, -38.4, 2, 1.6000004, -35.8, -1.9000001, 1.6000004, -38.4, -1.9000001, 1.6000004, -35.8, -1.9000001, 1.6000004, -34.2, -1.9000001, 1.6000004, -32, 2, 1.6000004, -32, 2, 1.6000004, -34.2, -1.9000001, 1.6000004, -29.9, -1.9000001, 1.6000004, -27, 2, 1.6000004, -27, 2, 1.6000004, -29.9, -1.9000001, 1.6000004, -23.5, -1.9000001, 1.6000004, -14, 2, 1.6000004, -14, 2, 1.6000004, -23.5, -1.9000001, 0.20000076, -9.5, -1.9000001, 0.20000076, -6.200001, 2, 0.20000076, -6.200001, 2, 0.20000076, -9.5, -1.9000001, 0.20000076, -4.700001, -1.9000001, 0.20000076, -1.7000008, 2, 0.20000076, -1.7000008, 2, 0.20000076, -4.700001, -1.9000001, 0.20000076, 2.5, -1.9000001, 0.20000076, 9.5, 2, 0.20000076, 9.5, 2, 0.20000076, 2.5, -1.9000001, 0.20000076, 12.5, -1.9000001, 0.20000076, 23.5, 2, 0.20000076, 23.5, 2, 0.20000076, 12.5)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 3, 2), PackedInt32Array(2, 3, 4), PackedInt32Array(6, 5, 3), PackedInt32Array(3, 5, 4), PackedInt32Array(2, 7, 1), PackedInt32Array(7, 2, 8), PackedInt32Array(8, 2, 9), PackedInt32Array(10, 8, 11), PackedInt32Array(11, 8, 9), PackedInt32Array(15, 14, 12), PackedInt32Array(12, 14, 13), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17), PackedInt32Array(23, 22, 20), PackedInt32Array(20, 22, 21), PackedInt32Array(27, 26, 24), PackedInt32Array(24, 26, 25), PackedInt32Array(31, 30, 28), PackedInt32Array(28, 30, 29), PackedInt32Array(35, 34, 32), PackedInt32Array(32, 34, 33), PackedInt32Array(39, 38, 36), PackedInt32Array(36, 38, 37)]
+geometry_parsed_geometry_type = 1
+cell_size = 0.1
+cell_height = 0.1
+agent_height = 1.8
+agent_max_climb = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xp7io"]
+albedo_texture = ExtResource("1_6hg20")
+roughness_texture = ExtResource("3_p2rm6")
+normal_enabled = true
+normal_texture = ExtResource("2_jl3ms")
+uv1_scale = Vector3(0.8, 0.8, 0.8)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_luefb"]
+albedo_color = Color(0.6, 0.6, 0.6, 1)
+albedo_texture = ExtResource("4_qwnbh")
+roughness_texture = ExtResource("6_mu1o8")
+normal_enabled = true
+normal_texture = ExtResource("5_53ve6")
+uv1_scale = Vector3(0.3, 0.3, 0.3)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iilps"]
+albedo_texture = ExtResource("7_ltmv8")
+roughness_texture = ExtResource("9_cvgfb")
+normal_enabled = true
+normal_texture = ExtResource("8_lpjrv")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="Environment" id="Environment_77spw"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.4, 0.4, 0.45, 1)
+ambient_light_energy = 0.12
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.05, 0.05, 0.06, 1)
+fog_density = 0.035
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7u73e"]
+size = Vector3(6, 2, 80)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rd70d"]
+size = Vector3(3, 2, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_orb7u"]
+size = Vector3(5, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ckk8y"]
+size = Vector3(2.4, 2, 2.6)
+
+[sub_resource type="Curve3D" id="Curve3D_v255n"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -6.5, 0, -0.33333334, 0.8833334, 0, 0.33333334, -0.8833334, 0, 0, -10, 0, -0.23333333, 0.6333334, 0, 0.23333333, -0.6333334, 0, 2, -11.8, 0, 0.1, 2.0333333, 0, -0.1, -2.0333333, 0, 1.4, -13.8, 0, -0.19999999, 1.9166665, 0, 0.19999999, -1.9166665, 0, 1.4, -24, 0, 0, 0.46666655, 0, 0, -0.46666655, 0, 2.6, -25.3, 0, 0.19999999, 0.8166669, 0, -0.19999999, -0.8166669, 0, 1.4, -26.8, 0, -0.18333334, 0.7000001, 0, 0.18333334, -0.7000001, 0, 1.4, -30.2, 0, 0, 0.29999986, 0, 0, -0.29999986, 0, 2.5, -31, 0, 0.18333334, 1.2000002, 0, -0.18333334, -1.2000002, 0, 1.4, -32, -0.2, 0, 1.2666664, 0.2, 0, -1.2666664, 0, 1.4, -38.2, 0, 0, 0, 0, 0, 0, 1.2, 1.4, -39.6),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 12
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gp0b8"]
+size = Vector3(5, 2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_6id0o"]
+font_names = PackedStringArray("Leelawadee UI", "Tahoma", "Noto Sans Thai")
+
+[node name="Chasm_Jumps" type="Node3D" unique_id=781397489]
+
+[node name="Navigation" type="NavigationRegion3D" parent="." unique_id=701548588]
+navigation_mesh = SubResource("NavigationMesh_x3d8e")
+
+[node name="Start" type="CSGBox3D" parent="Navigation" unique_id=2004152528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 18)
+use_collision = true
+size = Vector3(5, 1, 12)
+material = SubResource("StandardMaterial3D_xp7io")
+metadata/surface = "metal"
+
+[node name="P2" type="CSGBox3D" parent="Navigation" unique_id=333921408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 6)
+use_collision = true
+size = Vector3(5, 1, 8)
+material = SubResource("StandardMaterial3D_xp7io")
+metadata/surface = "metal"
+
+[node name="P3" type="CSGBox3D" parent="Navigation" unique_id=469228943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -5.6)
+use_collision = true
+size = Vector3(5, 1, 8.8)
+material = SubResource("StandardMaterial3D_xp7io")
+metadata/surface = "metal"
+
+[node name="P4" type="CSGBox3D" parent="Navigation" unique_id=1568065220]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -18.75)
+use_collision = true
+size = Vector3(5, 1, 10.5)
+material = SubResource("StandardMaterial3D_xp7io")
+metadata/surface = "metal"
+
+[node name="P5" type="CSGBox3D" parent="Navigation" unique_id=2011258445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -34.25)
+use_collision = true
+size = Vector3(5, 1, 15.5)
+material = SubResource("StandardMaterial3D_xp7io")
+metadata/surface = "metal"
+
+[node name="WallW" type="CSGBox3D" parent="Navigation" unique_id=13160813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.65, -8, -9)
+use_collision = true
+size = Vector3(0.3, 30, 70)
+material = SubResource("StandardMaterial3D_luefb")
+
+[node name="WallE" type="CSGBox3D" parent="Navigation" unique_id=991124831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65, -8, -9)
+use_collision = true
+size = Vector3(0.3, 30, 70)
+material = SubResource("StandardMaterial3D_luefb")
+
+[node name="EndWall" type="CSGBox3D" parent="Navigation" unique_id=157353245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -42.2)
+use_collision = true
+size = Vector3(5, 8, 0.3)
+material = SubResource("StandardMaterial3D_luefb")
+
+[node name="VaultWall" type="CSGBox3D" parent="Navigation" unique_id=1592737451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -5.5)
+use_collision = true
+size = Vector3(5, 1, 0.4)
+material = SubResource("StandardMaterial3D_iilps")
+
+[node name="ChaseCrate" type="CSGBox3D" parent="Navigation" unique_id=478337860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95, -31)
+use_collision = true
+size = Vector3(5, 1.1, 1)
+material = SubResource("StandardMaterial3D_iilps")
+
+[node name="DuckBeam" type="CSGBox3D" parent="Navigation" unique_id=1294616308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.65, -35)
+use_collision = true
+size = Vector3(5, 2, 0.6)
+material = SubResource("StandardMaterial3D_luefb")
+
+[node name="SafeWall" type="CSGBox3D" parent="Navigation" unique_id=1681860549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3.4, -39)
+use_collision = true
+size = Vector3(3, 4, 0.2)
+material = SubResource("StandardMaterial3D_luefb")
+
+[node name="@WorldEnvironment@15" type="WorldEnvironment" parent="." unique_id=1374458728]
+environment = SubResource("Environment_77spw")
+
+[node name="KillZone" type="Area3D" parent="." unique_id=119804972]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14, -9)
+script = ExtResource("10_mjr6x")
+
+[node name="@CollisionShape3D@16" type="CollisionShape3D" parent="KillZone" unique_id=1864161093]
+shape = SubResource("BoxShape3D_7u73e")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1530650045 instance=ExtResource("11_l324a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22)
+script = ExtResource("12_7awh1")
+
+[node name="Checkpoint" type="Area3D" parent="." unique_id=1302692701]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 22)
+script = ExtResource("13_eobcl")
+
+[node name="@CollisionShape3D@17" type="CollisionShape3D" parent="Checkpoint" unique_id=1901649528]
+shape = SubResource("BoxShape3D_rd70d")
+
+[node name="Spawn" type="Marker3D" parent="Checkpoint" unique_id=843406739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="@Area3D@18" type="Area3D" parent="." unique_id=796885440]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, -16)
+script = ExtResource("13_eobcl")
+
+[node name="@CollisionShape3D@19" type="CollisionShape3D" parent="@Area3D@18" unique_id=1483433914]
+shape = SubResource("BoxShape3D_orb7u")
+
+[node name="Spawn" type="Marker3D" parent="@Area3D@18" unique_id=64149085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0000001, 0)
+
+[node name="HideSpot" type="Area3D" parent="." unique_id=1805304057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 2.4, -40.6)
+script = ExtResource("14_6rpwb")
+require_crouch = false
+
+[node name="@CollisionShape3D@20" type="CollisionShape3D" parent="HideSpot" unique_id=371322527]
+shape = SubResource("BoxShape3D_ckk8y")
+
+[node name="ChasePath" type="Path3D" parent="." unique_id=30338247]
+curve = SubResource("Curve3D_v255n")
+
+[node name="Chaser" type="PathFollow3D" parent="ChasePath" unique_id=661575257]
+rotation_mode = 1
+script = ExtResource("15_kq1ie")
+speed = 5.4
+anim_run = "Sprint"
+
+[node name="Model" type="Node3D" parent="ChasePath/Chaser" unique_id=1403543616]
+
+[node name="Mannequin" type="Node3D" parent="ChasePath/Chaser/Model" unique_id=1281859774 instance=ExtResource("16_7i6l0")]
+transform = Transform3D(-1.9499999, 0, -1.7047441e-07, 0, 1.5, 0, 1.7047441e-07, 0, -1.9499999, 0, 0, 0)
+
+[node name="StartChase" type="Area3D" parent="." unique_id=473610343 node_paths=PackedStringArray("targets")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, -18.5)
+script = ExtResource("17_hvjur")
+targets = [NodePath("../ChasePath/Chaser")]
+
+[node name="@CollisionShape3D@21" type="CollisionShape3D" parent="StartChase" unique_id=255822556]
+shape = SubResource("BoxShape3D_gp0b8")
+
+[node name="@OmniLight3D@22" type="OmniLight3D" parent="." unique_id=1471975894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 20)
+light_color = Color(1, 0.75, 0.5, 1)
+light_energy = 0.8
+shadow_enabled = true
+omni_range = 8.0
+
+[node name="@OmniLight3D@23" type="OmniLight3D" parent="." unique_id=1716749317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 6)
+light_color = Color(1, 0.75, 0.5, 1)
+light_energy = 0.8
+shadow_enabled = true
+omni_range = 8.0
+
+[node name="@OmniLight3D@24" type="OmniLight3D" parent="." unique_id=601092698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -6)
+light_color = Color(1, 0.75, 0.5, 1)
+light_energy = 0.8
+shadow_enabled = true
+omni_range = 8.0
+
+[node name="@OmniLight3D@25" type="OmniLight3D" parent="." unique_id=1633606920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.9, -18)
+light_color = Color(1, 0.75, 0.5, 1)
+light_energy = 0.8
+shadow_enabled = true
+omni_range = 8.0
+
+[node name="@OmniLight3D@26" type="OmniLight3D" parent="." unique_id=1863423219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.9, -30)
+light_color = Color(1, 0.75, 0.5, 1)
+light_energy = 0.8
+shadow_enabled = true
+omni_range = 8.0
+
+[node name="@OmniLight3D@27" type="OmniLight3D" parent="." unique_id=729357610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.9, -38)
+light_color = Color(1, 0.75, 0.5, 1)
+light_energy = 0.8
+shadow_enabled = true
+omni_range = 8.0
+
+[node name="Sign" type="Label3D" parent="." unique_id=381830343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 17.5)
+pixel_size = 0.006
+billboard = 2
+text = "ห้อง 6 · เหว (ตกแล้วตาย)
+ช่อง 2 ม. เดินกระโดด · ช่อง 3.2 ม. ต้องวิ่ง
+วิ่งค้าง Shift ชนสิ่งกีดขวาง = ข้ามเอง ไม่เสียความเร็ว
+ขอบสูง: คลิกซ้ายค้างกลางอากาศ = เกาะ · Space = ดึงขึ้น"
+font = SubResource("SystemFont_6id0o")
+font_size = 26
+outline_size = 8

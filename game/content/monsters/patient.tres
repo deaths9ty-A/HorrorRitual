@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="MonsterProfile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://monsters/monster_profile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "แบบ Patients (LN2): ขยับเฉพาะในที่มืด โดนแสงแล้วหยุด"
+patrol_speed = 0.0
+investigate_speed = 0.0
+chase_speed = 3.2
+can_hear = false
+can_see = false
+frozen_by_light = true
+wake_distance = 7.0
+lose_target_time = 999.0
+search_time = 2.0
+catch_range = 1.1
+anim_idle = "Idle"
+anim_walk = "Walk"
+anim_run = "Jog_Fwd"
+anim_catch = "Push"
+anim_walk_speed = 1.0
+anim_run_speed = 2.8
+anim_sprint_speed = 4.7
+turn_speed = 4.0
+decel = 9.0
+anim_sprint = "Jog_Fwd"
+accel = 5.0

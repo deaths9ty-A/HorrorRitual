@@ -1,0 +1,114 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/Grass004/Grass004_1K-JPG_Color.jpg" id="1_mt8gr"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/Grass004/Grass004_1K-JPG_NormalGL.jpg" id="2_pqd1h"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/Grass004/Grass004_1K-JPG_Roughness.jpg" id="3_86iyr"]
+[ext_resource type="Texture2D" path="res://assets/skies/polyhaven/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="4_wxpal"]
+[ext_resource type="Script" path="res://world/grass_field.gd" id="5_bigw5"]
+[ext_resource type="PackedScene" path="res://player/player.tscn" id="6_ta86r"]
+[ext_resource type="Script" path="res://player/player.gd" id="7_ctrsv"]
+[ext_resource type="Script" path="res://world/checkpoint.gd" id="8_q0ayq"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_dh66y"]
+vertices = PackedVector3Array(-119.5, 0.20000002, -119.5, -119.5, 0.20000002, 119.5, 119.5, 0.20000002, 119.5, 119.5, 0.20000002, -119.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+geometry_parsed_geometry_type = 1
+cell_size = 0.1
+cell_height = 0.1
+agent_height = 1.8
+agent_max_climb = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eqf8y"]
+albedo_texture = ExtResource("1_mt8gr")
+roughness_texture = ExtResource("3_86iyr")
+normal_enabled = true
+normal_texture = ExtResource("2_pqd1h")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_lae5o"]
+panorama = ExtResource("4_wxpal")
+
+[sub_resource type="Sky" id="Sky_wcg0e"]
+sky_material = SubResource("PanoramaSkyMaterial_lae5o")
+
+[sub_resource type="Environment" id="Environment_0vrhn"]
+background_mode = 2
+sky = SubResource("Sky_wcg0e")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.78, 0.84, 0.9, 1)
+fog_density = 0.004
+fog_aerial_perspective = 0.6
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ps2u"]
+size = Vector3(1, 10, 240)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_btepm"]
+size = Vector3(1, 10, 240)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sdk14"]
+size = Vector3(240, 10, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rsast"]
+size = Vector3(240, 10, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ywqxm"]
+size = Vector3(3, 2, 3)
+
+[node name="Level01_Field" type="Node3D" unique_id=2013115570]
+
+[node name="Navigation" type="NavigationRegion3D" parent="." unique_id=418988936]
+navigation_mesh = SubResource("NavigationMesh_dh66y")
+
+[node name="Ground" type="CSGBox3D" parent="Navigation" unique_id=1601332361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+use_collision = true
+size = Vector3(240, 0.2, 240)
+material = SubResource("StandardMaterial3D_eqf8y")
+metadata/surface = "grass"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=794167666]
+environment = SubResource("Environment_0vrhn")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1508995534]
+transform = Transform3D(0.81915206, 0.45198438, -0.35312894, 0, 0.6156615, 0.7880107, 0.57357645, -0.6455006, 0.5043204, 0, 0, 0)
+light_energy = 1.3
+shadow_enabled = true
+directional_shadow_max_distance = 80.0
+
+[node name="Boundary" type="StaticBody3D" parent="." unique_id=1056765448]
+
+[node name="@CollisionShape3D@15" type="CollisionShape3D" parent="Boundary" unique_id=1846096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 5, 0)
+shape = SubResource("BoxShape3D_1ps2u")
+
+[node name="@CollisionShape3D@16" type="CollisionShape3D" parent="Boundary" unique_id=1484220601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 5, 0)
+shape = SubResource("BoxShape3D_btepm")
+
+[node name="@CollisionShape3D@17" type="CollisionShape3D" parent="Boundary" unique_id=690745298]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 120)
+shape = SubResource("BoxShape3D_sdk14")
+
+[node name="@CollisionShape3D@18" type="CollisionShape3D" parent="Boundary" unique_id=1335296498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -120)
+shape = SubResource("BoxShape3D_rsast")
+
+[node name="GrassField" type="MultiMeshInstance3D" parent="." unique_id=1797428867]
+script = ExtResource("5_bigw5")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1167886344 instance=ExtResource("6_ta86r")]
+script = ExtResource("7_ctrsv")
+
+[node name="Checkpoint" type="Area3D" parent="." unique_id=1529683871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("8_q0ayq")
+
+[node name="@CollisionShape3D@19" type="CollisionShape3D" parent="Checkpoint" unique_id=930018999]
+shape = SubResource("BoxShape3D_ywqxm")
+
+[node name="Spawn" type="Marker3D" parent="Checkpoint" unique_id=82543107]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)

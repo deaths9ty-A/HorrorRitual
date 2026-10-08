@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="MonsterProfile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://monsters/monster_profile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "แบบ Guests: ฝูง เห็นแล้วไล่ไม่เลิก"
+patrol_speed = 1.0
+investigate_speed = 1.6
+chase_speed = 4.6
+can_hear = true
+hearing_scale = 0.6
+can_see = true
+sight_range = 30.0
+sight_fov_deg = 200.0
+lose_target_time = 8.0
+search_time = 4.0
+search_radius = 3.0
+catch_range = 1.2
+anim_idle = "Sitting_Idle"
+anim_walk = "Walk"
+anim_run = "Jog_Fwd"
+anim_catch = "Push"
+anim_walk_speed = 1.0
+anim_run_speed = 2.8
+heartbeat = 2
+heartbeat_range = 14.0
+anim_sprint_speed = 4.7
+turn_speed = 4.0
+decel = 9.0
+anim_sprint = "Sprint"
+accel = 6.0

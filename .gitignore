@@ -1,0 +1,17 @@
+# Godot
+.godot/
+*.translation
+# Binaries / large dumps (ห้ามดันขึ้น cloud)
+*.exe
+*.zip
+*.pck
+*.apk
+*.aab
+# OS / editor
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+# Python
+__pycache__/
+*.pyc

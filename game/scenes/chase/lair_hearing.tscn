@@ -1,0 +1,537 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/WoodFloor043/WoodFloor043_1K-JPG_Color.jpg" id="1_1m5df"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/WoodFloor043/WoodFloor043_1K-JPG_NormalGL.jpg" id="2_1ysi5"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/WoodFloor043/WoodFloor043_1K-JPG_Roughness.jpg" id="3_7wpw0"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/Wallpaper002A/Wallpaper002A_1K-JPG_Color.jpg" id="4_5ev4m"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/Wallpaper002A/Wallpaper002A_1K-JPG_NormalGL.jpg" id="5_kmrqu"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/Wallpaper002A/Wallpaper002A_1K-JPG_Roughness.jpg" id="6_1hsun"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/Carpet016/Carpet016_1K-JPG_Color.jpg" id="7_io7a3"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/Carpet016/Carpet016_1K-JPG_NormalGL.jpg" id="8_aifvp"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/Carpet016/Carpet016_1K-JPG_Roughness.jpg" id="9_e3y8x"]
+[ext_resource type="PackedScene" path="res://assets/models/polyhaven/GothicBed_01/GothicBed_01_1k.gltf" id="10_p88ot"]
+[ext_resource type="PackedScene" path="res://assets/models/polyhaven/vintage_day_bed/vintage_day_bed_1k.gltf" id="11_inhp6"]
+[ext_resource type="PackedScene" path="res://assets/models/polyhaven/wooden_bookshelf_worn/wooden_bookshelf_worn_1k.gltf" id="12_bijed"]
+[ext_resource type="PackedScene" path="res://assets/models/polyhaven/GothicCabinet_01/GothicCabinet_01_1k.gltf" id="13_hbqtx"]
+[ext_resource type="PackedScene" path="res://assets/models/polyhaven/painted_wooden_shelves/painted_wooden_shelves_1k.gltf" id="14_3525x"]
+[ext_resource type="PackedScene" path="res://assets/models/polyhaven/WoodenTable_02/WoodenTable_02_1k.gltf" id="15_3yqlr"]
+[ext_resource type="PackedScene" path="res://assets/models/polyhaven/WoodenTable_01/WoodenTable_01_1k.gltf" id="16_xeqpw"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/Planks037A/Planks037A_1K-JPG_Color.jpg" id="17_y2e4w"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/Planks037A/Planks037A_1K-JPG_NormalGL.jpg" id="18_qfgbp"]
+[ext_resource type="Texture2D" path="res://assets/textures/ambientcg/Planks037A/Planks037A_1K-JPG_Roughness.jpg" id="19_3bev3"]
+[ext_resource type="Script" path="res://world/hide_spot.gd" id="20_wek2h"]
+[ext_resource type="Script" path="res://props/grabbable.gd" id="21_vr6xw"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactMetal_heavy_000.ogg" id="22_uma4v"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactMetal_heavy_001.ogg" id="23_ntq4c"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactMetal_heavy_002.ogg" id="24_3c18n"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactMetal_heavy_003.ogg" id="25_ygnu4"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactMetal_heavy_004.ogg" id="26_n4a6w"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactMetal_light_000.ogg" id="27_uip72"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactMetal_light_001.ogg" id="28_m3vao"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactMetal_light_002.ogg" id="29_vbnpf"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactMetal_light_003.ogg" id="30_buxsg"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactMetal_light_004.ogg" id="31_x4jh1"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactMetal_medium_000.ogg" id="32_7h24r"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactMetal_medium_001.ogg" id="33_ev7io"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactMetal_medium_002.ogg" id="34_uw1ol"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactMetal_medium_003.ogg" id="35_c2qd8"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactMetal_medium_004.ogg" id="36_1ps4y"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactPlate_heavy_000.ogg" id="37_gww2n"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactPlate_heavy_001.ogg" id="38_c7lxs"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactPlate_heavy_002.ogg" id="39_w2qsc"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactPlate_heavy_003.ogg" id="40_53lra"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactPlate_heavy_004.ogg" id="41_a4hki"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactPlate_light_000.ogg" id="42_hl8k5"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactPlate_light_001.ogg" id="43_stfka"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactPlate_light_002.ogg" id="44_gpx4n"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactPlate_light_003.ogg" id="45_ajesl"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactPlate_light_004.ogg" id="46_pd1fh"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactPlate_medium_000.ogg" id="47_s4xtj"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactPlate_medium_001.ogg" id="48_65xlu"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactPlate_medium_002.ogg" id="49_calts"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactPlate_medium_003.ogg" id="50_2rxad"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactPlate_medium_004.ogg" id="51_ik13f"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactWood_heavy_000.ogg" id="52_4ul5h"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactWood_heavy_001.ogg" id="53_31spn"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactWood_heavy_002.ogg" id="54_xtsuy"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactWood_heavy_003.ogg" id="55_6n8ad"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactWood_heavy_004.ogg" id="56_5e2os"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactWood_light_000.ogg" id="57_rupbx"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactWood_light_001.ogg" id="58_r6m36"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactWood_light_002.ogg" id="59_q01ku"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactWood_light_003.ogg" id="60_mnguh"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactWood_light_004.ogg" id="61_h0cnb"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactWood_medium_000.ogg" id="62_3r6fj"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactWood_medium_001.ogg" id="63_gj56o"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactWood_medium_002.ogg" id="64_aax1j"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactWood_medium_003.ogg" id="65_urcnm"]
+[ext_resource type="AudioStream" path="res://assets/audio/kenney/impact-sounds/impactWood_medium_004.ogg" id="66_233kj"]
+[ext_resource type="PackedScene" path="res://assets/models/polyhaven/can_rusted/can_rusted_1k.gltf" id="67_2nxvl"]
+[ext_resource type="PackedScene" path="res://assets/models/polyhaven/brass_pot_01/brass_pot_01_1k.gltf" id="68_7htic"]
+[ext_resource type="PackedScene" path="res://assets/models/polyhaven/wooden_bowl_02/wooden_bowl_02_1k.gltf" id="69_c01f1"]
+[ext_resource type="PackedScene" path="res://assets/models/polyhaven/jug_01/jug_01_1k.gltf" id="70_ajfxs"]
+[ext_resource type="PackedScene" path="res://assets/models/polyhaven/russian_food_cans_01/russian_food_cans_01_1k.gltf" id="71_vxtq6"]
+[ext_resource type="PackedScene" path="res://player/player.tscn" id="72_ueitc"]
+[ext_resource type="Script" path="res://player/player.gd" id="73_qv40w"]
+[ext_resource type="Script" path="res://world/checkpoint.gd" id="74_qiirk"]
+[ext_resource type="Script" path="res://monsters/monster.gd" id="75_w8yvx"]
+[ext_resource type="Resource" path="res://content/monsters/janitor.tres" id="76_y7mcp"]
+[ext_resource type="PackedScene" path="res://assets/models/quaternius/ual_standard/ual_standard.glb" id="77_x05vv"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_jme6l"]
+vertices = PackedVector3Array(-6.7, 5.3, -11.700001, -6.7, 5.3, 11.699999, 6.700001, 5.3, 11.699999, 6.700001, 5.3, -11.700001, -6.5, 0.20000002, -11.400001, -6.5, 0.20000002, -10.000001, -5.6, 0.20000002, -10.000001, -5.2, 0.20000002, -9.6, -1.7999997, 0.20000002, -6.9000006, -0.9999995, 0.20000002, -7.0000005, -0.8999996, 0.20000002, -11.400001, -5.2999997, 0.20000002, -8.300001, -0.2999997, 0.20000002, -7.0000005, 4.7683716e-07, 0.20000002, -6.8000007, 6.5, 0.20000002, -5.8000007, 6.5, 0.20000002, -11.400001, 0.10000038, 0.20000002, -5.8000007, -3.2999997, 0.20000002, -4.700001, -3.2999997, 0.20000002, -4.000001, -2.1, 0.20000002, -4.000001, -3.6999998, 0.20000002, -5.100001, -2.1, 0.20000002, -6.600001, -6.5, 0.20000002, -8, -5.7999997, 0.20000002, -4.700001, -5.6, 0.20000002, -5.0000005, -5.6, 0.20000002, -8, -6.5, 0.20000002, -1.8000002, -5.7999997, 0.20000002, -1.9000006, -1.0999999, 1, -6.0000005, -1.0999999, 1, -4.000001, -0.8999996, 1, -4.000001, -0.8999996, 1, -6.0000005, 5.1000004, 0.20000002, -2.9000006, 6.5, 0.20000002, -2.9000006, 4.8, 0.20000002, -2.6000004, 4.7683716e-07, 0.20000002, -3.3000002, -4.7999997, 2.0000002, -4.1000004, -4.7999997, 2.0000002, -1.9000006, -4.2999997, 2.0000002, -1.9000006, -4.2999997, 2.0000002, -4.1000004, -5.7999997, 0.20000002, -1.3000002, -2.1, 0.20000002, -3.4000006, -5.3999996, 0.20000002, -0.9000006, -6.5, 0.20000002, 1.3999996, -5.7, 0.20000002, 1.3999996, -1.6999998, 0.20000002, -3.000001, -3.2999997, 0.20000002, -1.3000002, -3.4999998, 0.20000002, -1.000001, -5.2999997, 0.20000002, 1.7999992, -5.3999996, 0.20000002, 4.299999, 6.200001, 0.20000002, 5.199999, 6.5, 0.20000002, 5.3999996, 6.5, 0.20000002, 0.8999996, 5.1000004, 0.20000002, 0.8999996, 4.700001, 0.20000002, 0.49999905, 2.6000004, 0.20000002, 5.299999, -0.2999997, 0.20000002, -3.000001, 5.8, 0.20000002, -1.8000002, 5.8, 0.20000002, -0.20000076, 6.5, 0.20000002, -0.20000076, 6.5, 0.20000002, -1.8000002, 4.7683716e-07, 0.20000002, 11.5, 4.7683716e-07, 0.20000002, 10.299999, -0.6999998, 0.20000002, 10.1, -6.5, 0.20000002, 11.5, -0.39999962, 0.20000002, 8.699999, 0.6000004, 0.20000002, 8.799999, 2.4000006, 0.20000002, 8.4, 2.3000002, 0.20000002, 5.6000004, -0.7999997, 0.20000002, 9.1, -5.7, 0.20000002, 4.6000004, -6.5, 0.20000002, 4.6000004, 3.3000002, 2.6000001, 6.199999, 3.3000002, 2.6000001, 7.699999, 5.6000004, 2.6000001, 7.699999, 5.6000004, 2.6000001, 6.199999, 3.4000006, 0.20000002, 6.299999, 3.4000006, 0.20000002, 7.6000004, 5.5, 0.20000002, 7.6000004, 5.5, 0.20000002, 6.299999, 0.4000001, 0.20000002, 10.299999, 0.8000002, 0.20000002, 9.1, 0.8000002, 0.20000002, 9.9, 3.5, 0.20000002, 11.5, 3.5, 0.20000002, 8.699999, 2.7000008, 0.20000002, 8.699999, 6.5, 0.20000002, 11.5, 6.5, 0.20000002, 8.5, 6.200001, 0.20000002, 8.699999)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(6, 5, 4), PackedInt32Array(6, 4, 7), PackedInt32Array(7, 4, 10), PackedInt32Array(7, 10, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(8, 11, 7), PackedInt32Array(12, 9, 10), PackedInt32Array(12, 10, 13), PackedInt32Array(13, 10, 15), PackedInt32Array(13, 15, 14), PackedInt32Array(14, 16, 13), PackedInt32Array(19, 18, 17), PackedInt32Array(17, 20, 19), PackedInt32Array(19, 20, 21), PackedInt32Array(24, 23, 25), PackedInt32Array(25, 23, 22), PackedInt32Array(21, 20, 8), PackedInt32Array(8, 20, 24), PackedInt32Array(8, 24, 25), PackedInt32Array(8, 25, 11), PackedInt32Array(27, 26, 23), PackedInt32Array(23, 26, 22), PackedInt32Array(31, 30, 28), PackedInt32Array(28, 30, 29), PackedInt32Array(32, 14, 33), PackedInt32Array(32, 34, 14), PackedInt32Array(14, 34, 35), PackedInt32Array(14, 35, 16), PackedInt32Array(39, 38, 36), PackedInt32Array(36, 38, 37), PackedInt32Array(26, 27, 40), PackedInt32Array(18, 19, 41), PackedInt32Array(40, 42, 26), PackedInt32Array(26, 42, 44), PackedInt32Array(26, 44, 43), PackedInt32Array(41, 45, 18), PackedInt32Array(18, 45, 46), PackedInt32Array(49, 48, 47), PackedInt32Array(51, 50, 52), PackedInt32Array(52, 50, 53), PackedInt32Array(53, 50, 54), PackedInt32Array(54, 50, 55), PackedInt32Array(46, 45, 47), PackedInt32Array(47, 45, 56), PackedInt32Array(44, 42, 48), PackedInt32Array(48, 42, 47), PackedInt32Array(34, 54, 56), PackedInt32Array(56, 54, 47), PackedInt32Array(47, 54, 55), PackedInt32Array(47, 55, 49), PackedInt32Array(56, 35, 34), PackedInt32Array(60, 59, 57), PackedInt32Array(57, 59, 58), PackedInt32Array(62, 61, 63), PackedInt32Array(63, 61, 64), PackedInt32Array(66, 65, 67), PackedInt32Array(67, 65, 68), PackedInt32Array(49, 55, 68), PackedInt32Array(65, 69, 68), PackedInt32Array(68, 69, 49), PackedInt32Array(49, 69, 70), PackedInt32Array(63, 64, 69), PackedInt32Array(69, 64, 70), PackedInt32Array(70, 64, 71), PackedInt32Array(75, 74, 72), PackedInt32Array(72, 74, 73), PackedInt32Array(79, 78, 76), PackedInt32Array(76, 78, 77), PackedInt32Array(61, 62, 80), PackedInt32Array(67, 81, 66), PackedInt32Array(80, 82, 61), PackedInt32Array(61, 82, 85), PackedInt32Array(61, 85, 84), PackedInt32Array(61, 84, 83), PackedInt32Array(67, 85, 81), PackedInt32Array(81, 85, 82), PackedInt32Array(88, 87, 86), PackedInt32Array(84, 88, 83), PackedInt32Array(83, 88, 86)]
+geometry_parsed_geometry_type = 1
+cell_size = 0.1
+cell_height = 0.1
+agent_height = 1.8
+agent_max_climb = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xm37d"]
+albedo_texture = ExtResource("1_1m5df")
+roughness_texture = ExtResource("3_7wpw0")
+normal_enabled = true
+normal_texture = ExtResource("2_1ysi5")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wqmhr"]
+albedo_color = Color(0.7, 0.68, 0.6, 1)
+albedo_texture = ExtResource("4_5ev4m")
+roughness_texture = ExtResource("6_1hsun")
+normal_enabled = true
+normal_texture = ExtResource("5_kmrqu")
+uv1_scale = Vector3(0.4, 0.4, 0.4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_giwna"]
+albedo_texture = ExtResource("7_io7a3")
+roughness_texture = ExtResource("9_e3y8x")
+normal_enabled = true
+normal_texture = ExtResource("8_aifvp")
+uv1_scale = Vector3(0.6, 0.6, 0.6)
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8pasq"]
+size = Vector3(2.390003, 2.4541445, 3.264)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gbeqe"]
+size = Vector3(3.1560884, 1.8037546, 1.3676418)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v6c3c"]
+size = Vector3(2.198323, 3.3015072, 0.9300833)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ad1kb"]
+size = Vector3(2.75063, 3.7774415, 1.8058643)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uglpb"]
+size = Vector3(0.8177851, 1.8001153, 0.58735186)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8yeaq"]
+size = Vector3(0.48108235, 0.128, 0.48108235)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ov8v1"]
+size = Vector3(0.128, 0.6682513, 0.128)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l4sd7"]
+size = Vector3(0.128, 0.6682513, 0.128)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jbsju"]
+size = Vector3(0.128, 0.6682513, 0.128)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d4vbp"]
+size = Vector3(0.128, 0.6682513, 0.128)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nkljy"]
+size = Vector3(2.8794367, 0.128, 1.0514795)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ueti"]
+size = Vector3(0.128, 0.8781588, 0.128)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ahkhr"]
+size = Vector3(0.128, 0.8781588, 0.128)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uhwgf"]
+size = Vector3(0.128, 0.8781588, 0.128)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oaa7l"]
+size = Vector3(0.128, 0.8781588, 0.128)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhmg3"]
+albedo_texture = ExtResource("17_y2e4w")
+roughness_texture = ExtResource("19_3bev3")
+normal_enabled = true
+normal_texture = ExtResource("18_qfgbp")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="Environment" id="Environment_8osfa"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.4, 0.4, 0.45, 1)
+ambient_light_energy = 0.12
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.05, 0.05, 0.06, 1)
+fog_density = 0.02
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_61apk"]
+size = Vector3(2, 1, 1.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wmllx"]
+size = Vector3(1.2, 1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_316ea"]
+size = Vector3(0.12453292, 0.15137778, 0.12467572)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_demau"]
+size = Vector3(0.30194566, 0.29094765, 0.3016926)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fvafq"]
+size = Vector3(0.13071346, 0.073097944, 0.12453967)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8tum8"]
+size = Vector3(0.27532166, 0.21131346, 0.16752623)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_064g3"]
+size = Vector3(0.14235358, 0.08489999, 0.04620392)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xaeaw"]
+size = Vector3(3, 2, 3)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oui56"]
+radius = 0.4
+height = 2.2
+
+[sub_resource type="SystemFont" id="SystemFont_c063q"]
+font_names = PackedStringArray("Leelawadee UI", "Tahoma", "Noto Sans Thai")
+
+[node name="Lair_Hearing" type="Node3D" unique_id=978343037]
+
+[node name="Navigation" type="NavigationRegion3D" parent="." unique_id=1731454119]
+navigation_mesh = SubResource("NavigationMesh_jme6l")
+
+[node name="Room_Floor" type="CSGBox3D" parent="Navigation" unique_id=138009095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+use_collision = true
+size = Vector3(14, 0.2, 24)
+material = SubResource("StandardMaterial3D_xm37d")
+metadata/surface = "wood"
+
+[node name="Room_Ceiling" type="CSGBox3D" parent="Navigation" unique_id=1898247082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1, 0)
+use_collision = true
+size = Vector3(14, 0.2, 24)
+material = SubResource("StandardMaterial3D_wqmhr")
+
+[node name="Room_WallN" type="CSGBox3D" parent="Navigation" unique_id=234192711]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -12.1)
+use_collision = true
+size = Vector3(14, 5, 0.2)
+material = SubResource("StandardMaterial3D_wqmhr")
+
+[node name="Room_WallS" type="CSGBox3D" parent="Navigation" unique_id=578545941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 12.1)
+use_collision = true
+size = Vector3(14, 5, 0.2)
+material = SubResource("StandardMaterial3D_wqmhr")
+
+[node name="Room_WallW" type="CSGBox3D" parent="Navigation" unique_id=542128494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1, 2.5, 0)
+use_collision = true
+size = Vector3(0.2, 5, 24)
+material = SubResource("StandardMaterial3D_wqmhr")
+
+[node name="Room_WallE" type="CSGBox3D" parent="Navigation" unique_id=1692508650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1, 2.5, 0)
+use_collision = true
+size = Vector3(0.2, 5, 24)
+material = SubResource("StandardMaterial3D_wqmhr")
+
+[node name="Rug1" type="CSGBox3D" parent="Navigation" unique_id=472457155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.015, 7)
+use_collision = true
+size = Vector3(2, 0.03, 8)
+material = SubResource("StandardMaterial3D_giwna")
+metadata/surface = "carpet"
+
+[node name="Rug2" type="CSGBox3D" parent="Navigation" unique_id=1744453142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.015, 2)
+use_collision = true
+size = Vector3(8, 0.03, 2)
+material = SubResource("StandardMaterial3D_giwna")
+metadata/surface = "carpet"
+
+[node name="Rug3" type="CSGBox3D" parent="Navigation" unique_id=83715439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.015, -3.5)
+use_collision = true
+size = Vector3(2, 0.03, 9)
+material = SubResource("StandardMaterial3D_giwna")
+metadata/surface = "carpet"
+
+[node name="Rug4" type="CSGBox3D" parent="Navigation" unique_id=2135414727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.015, -9)
+use_collision = true
+size = Vector3(6, 0.03, 2)
+material = SubResource("StandardMaterial3D_giwna")
+metadata/surface = "carpet"
+
+[node name="GothicBed_01" type="StaticBody3D" parent="Navigation" unique_id=520611356]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.5, 0, 7)
+
+[node name="GothicBed_01_1k" type="Node3D" parent="Navigation/GothicBed_01" unique_id=1393521635 instance=ExtResource("10_p88ot")]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+
+[node name="@CollisionShape3D@5" type="CollisionShape3D" parent="Navigation/GothicBed_01" unique_id=2098936015]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05690956, 1.227072, -0.05296862)
+shape = SubResource("BoxShape3D_8pasq")
+
+[node name="vintage_day_bed" type="StaticBody3D" parent="Navigation" unique_id=1739794152]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.5, 0, -3)
+
+[node name="vintage_day_bed_1k" type="Node3D" parent="Navigation/vintage_day_bed" unique_id=1471415436 instance=ExtResource("11_inhp6")]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+
+[node name="@CollisionShape3D@6" type="CollisionShape3D" parent="Navigation/vintage_day_bed" unique_id=1724610354]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2649765e-06, 0.901867, -0.06730437)
+shape = SubResource("BoxShape3D_gbeqe")
+
+[node name="wooden_bookshelf_worn" type="StaticBody3D" parent="Navigation" unique_id=1126084911]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.3, 0, 3)
+
+[node name="wooden_bookshelf_worn_1k" type="Node3D" parent="Navigation/wooden_bookshelf_worn" unique_id=1678706563 instance=ExtResource("12_bijed")]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+
+[node name="@CollisionShape3D@7" type="CollisionShape3D" parent="Navigation/wooden_bookshelf_worn" unique_id=446128067]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6507535, 0)
+shape = SubResource("BoxShape3D_v6c3c")
+
+[node name="GothicCabinet_01" type="StaticBody3D" parent="Navigation" unique_id=1421112200]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.3, 0, -1)
+
+[node name="GothicCabinet_01_1k" type="Node3D" parent="Navigation/GothicCabinet_01" unique_id=1786336015 instance=ExtResource("13_hbqtx")]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+
+[node name="@CollisionShape3D@8" type="CollisionShape3D" parent="Navigation/GothicCabinet_01" unique_id=1819227699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8887206, 0.17124003)
+shape = SubResource("BoxShape3D_ad1kb")
+
+[node name="painted_wooden_shelves" type="StaticBody3D" parent="Navigation" unique_id=1880140723]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.3, 0, -9)
+
+[node name="painted_wooden_shelves_1k" type="Node3D" parent="Navigation/painted_wooden_shelves" unique_id=1473568258 instance=ExtResource("14_3525x")]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+
+[node name="@CollisionShape3D@9" type="CollisionShape3D" parent="Navigation/painted_wooden_shelves" unique_id=143169235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.08835e-05, 0.8985168, 0.2936759)
+shape = SubResource("BoxShape3D_uglpb")
+
+[node name="WoodenTable_02" type="StaticBody3D" parent="Navigation" unique_id=1123562874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.5)
+
+[node name="WoodenTable_02_1k" type="Node3D" parent="Navigation/WoodenTable_02" unique_id=1991770380 instance=ExtResource("15_3yqlr")]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+
+[node name="@CollisionShape3D@10" type="CollisionShape3D" parent="Navigation/WoodenTable_02" unique_id=1658876261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6042512, -2.9802322e-08)
+shape = SubResource("BoxShape3D_8yeaq")
+
+[node name="@CollisionShape3D@11" type="CollisionShape3D" parent="Navigation/WoodenTable_02" unique_id=285055932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11254118, 0.33412558, -0.112541206)
+shape = SubResource("BoxShape3D_ov8v1")
+
+[node name="@CollisionShape3D@12" type="CollisionShape3D" parent="Navigation/WoodenTable_02" unique_id=1487089838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11254118, 0.33412558, 0.11254115)
+shape = SubResource("BoxShape3D_l4sd7")
+
+[node name="@CollisionShape3D@13" type="CollisionShape3D" parent="Navigation/WoodenTable_02" unique_id=249750054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11254118, 0.33412558, -0.112541206)
+shape = SubResource("BoxShape3D_jbsju")
+
+[node name="@CollisionShape3D@14" type="CollisionShape3D" parent="Navigation/WoodenTable_02" unique_id=1636258581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11254118, 0.33412558, 0.11254115)
+shape = SubResource("BoxShape3D_d4vbp")
+
+[node name="WoodenTable_01" type="StaticBody3D" parent="Navigation" unique_id=1409479372]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1, 0, -5)
+
+[node name="WoodenTable_01_1k" type="Node3D" parent="Navigation/WoodenTable_01" unique_id=1092703125 instance=ExtResource("16_xeqpw")]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+
+[node name="@CollisionShape3D@15" type="CollisionShape3D" parent="Navigation/WoodenTable_01" unique_id=1598778656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.81415874, 1.1920929e-07)
+shape = SubResource("BoxShape3D_nkljy")
+
+[node name="@CollisionShape3D@16" type="CollisionShape3D" parent="Navigation/WoodenTable_01" unique_id=318579835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3117183, 0.43907934, -0.39773962)
+shape = SubResource("BoxShape3D_5ueti")
+
+[node name="@CollisionShape3D@17" type="CollisionShape3D" parent="Navigation/WoodenTable_01" unique_id=2084477305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3117183, 0.43907934, 0.39773986)
+shape = SubResource("BoxShape3D_ahkhr")
+
+[node name="@CollisionShape3D@18" type="CollisionShape3D" parent="Navigation/WoodenTable_01" unique_id=989775842]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3117183, 0.43907934, -0.39773962)
+shape = SubResource("BoxShape3D_uhwgf")
+
+[node name="@CollisionShape3D@19" type="CollisionShape3D" parent="Navigation/WoodenTable_01" unique_id=2136343417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3117183, 0.43907934, 0.39773986)
+shape = SubResource("BoxShape3D_oaa7l")
+
+[node name="ExitDoorFrame" type="CSGBox3D" parent="Navigation" unique_id=173601022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, -12)
+use_collision = true
+size = Vector3(2, 3, 0.3)
+material = SubResource("StandardMaterial3D_rhmg3")
+
+[node name="@WorldEnvironment@4" type="WorldEnvironment" parent="." unique_id=269813000]
+environment = SubResource("Environment_8osfa")
+
+[node name="HideSpot" type="Area3D" parent="." unique_id=37431243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 9.5)
+script = ExtResource("20_wek2h")
+
+[node name="@CollisionShape3D@20" type="CollisionShape3D" parent="HideSpot" unique_id=937036071]
+shape = SubResource("BoxShape3D_61apk")
+
+[node name="@Area3D@21" type="Area3D" parent="." unique_id=1363386114]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, -5)
+script = ExtResource("20_wek2h")
+
+[node name="@CollisionShape3D@22" type="CollisionShape3D" parent="@Area3D@21" unique_id=529501867]
+shape = SubResource("BoxShape3D_wmllx")
+
+[node name="can_rusted" type="RigidBody3D" parent="." unique_id=1576804688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.4, 10)
+mass = 0.6
+script = ExtResource("21_vr6xw")
+impact_sounds = Array[AudioStream]([ExtResource("22_uma4v"), ExtResource("23_ntq4c"), ExtResource("24_3c18n"), ExtResource("25_ygnu4"), ExtResource("26_n4a6w"), ExtResource("27_uip72"), ExtResource("28_m3vao"), ExtResource("29_vbnpf"), ExtResource("30_buxsg"), ExtResource("31_x4jh1"), ExtResource("32_7h24r"), ExtResource("33_ev7io"), ExtResource("34_uw1ol"), ExtResource("35_c2qd8"), ExtResource("36_1ps4y"), ExtResource("37_gww2n"), ExtResource("38_c7lxs"), ExtResource("39_w2qsc"), ExtResource("40_53lra"), ExtResource("41_a4hki"), ExtResource("42_hl8k5"), ExtResource("43_stfka"), ExtResource("44_gpx4n"), ExtResource("45_ajesl"), ExtResource("46_pd1fh"), ExtResource("47_s4xtj"), ExtResource("48_65xlu"), ExtResource("49_calts"), ExtResource("50_2rxad"), ExtResource("51_ik13f"), ExtResource("52_4ul5h"), ExtResource("53_31spn"), ExtResource("54_xtsuy"), ExtResource("55_6n8ad"), ExtResource("56_5e2os"), ExtResource("57_rupbx"), ExtResource("58_r6m36"), ExtResource("59_q01ku"), ExtResource("60_mnguh"), ExtResource("61_h0cnb"), ExtResource("62_3r6fj"), ExtResource("63_gj56o"), ExtResource("64_aax1j"), ExtResource("65_urcnm"), ExtResource("66_233kj")])
+
+[node name="can_rusted_1k" type="Node3D" parent="can_rusted" unique_id=1325497307 instance=ExtResource("67_2nxvl")]
+
+[node name="@CollisionShape3D@23" type="CollisionShape3D" parent="can_rusted" unique_id=1805068577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00024892762, 0.07448811, 0.0009465292)
+shape = SubResource("BoxShape3D_316ea")
+
+[node name="brass_pot_01" type="RigidBody3D" parent="." unique_id=818677951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 0.4, 10)
+mass = 0.6
+script = ExtResource("21_vr6xw")
+impact_sounds = Array[AudioStream]([ExtResource("22_uma4v"), ExtResource("23_ntq4c"), ExtResource("24_3c18n"), ExtResource("25_ygnu4"), ExtResource("26_n4a6w"), ExtResource("27_uip72"), ExtResource("28_m3vao"), ExtResource("29_vbnpf"), ExtResource("30_buxsg"), ExtResource("31_x4jh1"), ExtResource("32_7h24r"), ExtResource("33_ev7io"), ExtResource("34_uw1ol"), ExtResource("35_c2qd8"), ExtResource("36_1ps4y"), ExtResource("37_gww2n"), ExtResource("38_c7lxs"), ExtResource("39_w2qsc"), ExtResource("40_53lra"), ExtResource("41_a4hki"), ExtResource("42_hl8k5"), ExtResource("43_stfka"), ExtResource("44_gpx4n"), ExtResource("45_ajesl"), ExtResource("46_pd1fh"), ExtResource("47_s4xtj"), ExtResource("48_65xlu"), ExtResource("49_calts"), ExtResource("50_2rxad"), ExtResource("51_ik13f"), ExtResource("52_4ul5h"), ExtResource("53_31spn"), ExtResource("54_xtsuy"), ExtResource("55_6n8ad"), ExtResource("56_5e2os"), ExtResource("57_rupbx"), ExtResource("58_r6m36"), ExtResource("59_q01ku"), ExtResource("60_mnguh"), ExtResource("61_h0cnb"), ExtResource("62_3r6fj"), ExtResource("63_gj56o"), ExtResource("64_aax1j"), ExtResource("65_urcnm"), ExtResource("66_233kj")])
+
+[node name="blend_export" type="Node3D" parent="brass_pot_01" unique_id=613380097 instance=ExtResource("68_7htic")]
+
+[node name="@CollisionShape3D@24" type="CollisionShape3D" parent="brass_pot_01" unique_id=884206585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.042685e-05, 0.1446209, -4.450977e-05)
+shape = SubResource("BoxShape3D_demau")
+
+[node name="wooden_bowl_02" type="RigidBody3D" parent="." unique_id=1113117483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3, 0.4, 10)
+mass = 0.6
+script = ExtResource("21_vr6xw")
+impact_sounds = Array[AudioStream]([ExtResource("22_uma4v"), ExtResource("23_ntq4c"), ExtResource("24_3c18n"), ExtResource("25_ygnu4"), ExtResource("26_n4a6w"), ExtResource("27_uip72"), ExtResource("28_m3vao"), ExtResource("29_vbnpf"), ExtResource("30_buxsg"), ExtResource("31_x4jh1"), ExtResource("32_7h24r"), ExtResource("33_ev7io"), ExtResource("34_uw1ol"), ExtResource("35_c2qd8"), ExtResource("36_1ps4y"), ExtResource("37_gww2n"), ExtResource("38_c7lxs"), ExtResource("39_w2qsc"), ExtResource("40_53lra"), ExtResource("41_a4hki"), ExtResource("42_hl8k5"), ExtResource("43_stfka"), ExtResource("44_gpx4n"), ExtResource("45_ajesl"), ExtResource("46_pd1fh"), ExtResource("47_s4xtj"), ExtResource("48_65xlu"), ExtResource("49_calts"), ExtResource("50_2rxad"), ExtResource("51_ik13f"), ExtResource("52_4ul5h"), ExtResource("53_31spn"), ExtResource("54_xtsuy"), ExtResource("55_6n8ad"), ExtResource("56_5e2os"), ExtResource("57_rupbx"), ExtResource("58_r6m36"), ExtResource("59_q01ku"), ExtResource("60_mnguh"), ExtResource("61_h0cnb"), ExtResource("62_3r6fj"), ExtResource("63_gj56o"), ExtResource("64_aax1j"), ExtResource("65_urcnm"), ExtResource("66_233kj")])
+
+[node name="blend_export" type="Node3D" parent="wooden_bowl_02" unique_id=1944553638 instance=ExtResource("69_c01f1")]
+
+[node name="@CollisionShape3D@25" type="CollisionShape3D" parent="wooden_bowl_02" unique_id=1409241357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00044760853, 0.036602423, 0.0002677031)
+shape = SubResource("BoxShape3D_fvafq")
+
+[node name="jug_01" type="RigidBody3D" parent="." unique_id=1685161691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 0.4, 10)
+mass = 0.6
+script = ExtResource("21_vr6xw")
+impact_sounds = Array[AudioStream]([ExtResource("22_uma4v"), ExtResource("23_ntq4c"), ExtResource("24_3c18n"), ExtResource("25_ygnu4"), ExtResource("26_n4a6w"), ExtResource("27_uip72"), ExtResource("28_m3vao"), ExtResource("29_vbnpf"), ExtResource("30_buxsg"), ExtResource("31_x4jh1"), ExtResource("32_7h24r"), ExtResource("33_ev7io"), ExtResource("34_uw1ol"), ExtResource("35_c2qd8"), ExtResource("36_1ps4y"), ExtResource("37_gww2n"), ExtResource("38_c7lxs"), ExtResource("39_w2qsc"), ExtResource("40_53lra"), ExtResource("41_a4hki"), ExtResource("42_hl8k5"), ExtResource("43_stfka"), ExtResource("44_gpx4n"), ExtResource("45_ajesl"), ExtResource("46_pd1fh"), ExtResource("47_s4xtj"), ExtResource("48_65xlu"), ExtResource("49_calts"), ExtResource("50_2rxad"), ExtResource("51_ik13f"), ExtResource("52_4ul5h"), ExtResource("53_31spn"), ExtResource("54_xtsuy"), ExtResource("55_6n8ad"), ExtResource("56_5e2os"), ExtResource("57_rupbx"), ExtResource("58_r6m36"), ExtResource("59_q01ku"), ExtResource("60_mnguh"), ExtResource("61_h0cnb"), ExtResource("62_3r6fj"), ExtResource("63_gj56o"), ExtResource("64_aax1j"), ExtResource("65_urcnm"), ExtResource("66_233kj")])
+
+[node name="jug_01_1k" type="Node3D" parent="jug_01" unique_id=2083065613 instance=ExtResource("70_ajfxs")]
+
+[node name="@CollisionShape3D@26" type="CollisionShape3D" parent="jug_01" unique_id=1186899894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014664531, 0.10589782, 0)
+shape = SubResource("BoxShape3D_8tum8")
+
+[node name="russian_food_cans_01" type="RigidBody3D" parent="." unique_id=1049133698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0.4, 10)
+mass = 0.6
+script = ExtResource("21_vr6xw")
+impact_sounds = Array[AudioStream]([ExtResource("22_uma4v"), ExtResource("23_ntq4c"), ExtResource("24_3c18n"), ExtResource("25_ygnu4"), ExtResource("26_n4a6w"), ExtResource("27_uip72"), ExtResource("28_m3vao"), ExtResource("29_vbnpf"), ExtResource("30_buxsg"), ExtResource("31_x4jh1"), ExtResource("32_7h24r"), ExtResource("33_ev7io"), ExtResource("34_uw1ol"), ExtResource("35_c2qd8"), ExtResource("36_1ps4y"), ExtResource("37_gww2n"), ExtResource("38_c7lxs"), ExtResource("39_w2qsc"), ExtResource("40_53lra"), ExtResource("41_a4hki"), ExtResource("42_hl8k5"), ExtResource("43_stfka"), ExtResource("44_gpx4n"), ExtResource("45_ajesl"), ExtResource("46_pd1fh"), ExtResource("47_s4xtj"), ExtResource("48_65xlu"), ExtResource("49_calts"), ExtResource("50_2rxad"), ExtResource("51_ik13f"), ExtResource("52_4ul5h"), ExtResource("53_31spn"), ExtResource("54_xtsuy"), ExtResource("55_6n8ad"), ExtResource("56_5e2os"), ExtResource("57_rupbx"), ExtResource("58_r6m36"), ExtResource("59_q01ku"), ExtResource("60_mnguh"), ExtResource("61_h0cnb"), ExtResource("62_3r6fj"), ExtResource("63_gj56o"), ExtResource("64_aax1j"), ExtResource("65_urcnm"), ExtResource("66_233kj")])
+
+[node name="russian_food_cans_01_1k" type="Node3D" parent="russian_food_cans_01" unique_id=326276838 instance=ExtResource("71_vxtq6")]
+
+[node name="@CollisionShape3D@27" type="CollisionShape3D" parent="russian_food_cans_01" unique_id=986241187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001925163, 0.042449996, 0)
+shape = SubResource("BoxShape3D_064g3")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=617010664 instance=ExtResource("72_ueitc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 10.5)
+script = ExtResource("73_qv40w")
+
+[node name="Checkpoint" type="Area3D" parent="." unique_id=934140879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 10.5)
+script = ExtResource("74_qiirk")
+
+[node name="@CollisionShape3D@28" type="CollisionShape3D" parent="Checkpoint" unique_id=73264585]
+shape = SubResource("BoxShape3D_xaeaw")
+
+[node name="Spawn" type="Marker3D" parent="Checkpoint" unique_id=1087030838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Monster" type="CharacterBody3D" parent="." unique_id=1207056830 node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, 3, 0, -6)
+script = ExtResource("75_w8yvx")
+profile = ExtResource("76_y7mcp")
+patrol_points = [NodePath("../Monster_Patrol0"), NodePath("../Monster_Patrol1"), NodePath("../Monster_Patrol2"), NodePath("../Monster_Patrol3")]
+model_tint = Color(0.25, 0.2, 0.17, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Monster" unique_id=894070343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+shape = SubResource("CapsuleShape3D_oui56")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Monster" unique_id=307717330]
+path_desired_distance = 0.5
+target_desired_distance = 0.6
+height = 2.2
+
+[node name="Eye" type="Marker3D" parent="Monster" unique_id=522754536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95, -0.3)
+
+[node name="Model" type="Node3D" parent="Monster" unique_id=1127000521]
+
+[node name="Mannequin" type="Node3D" parent="Monster/Model" unique_id=1281859774 instance=ExtResource("77_x05vv")]
+transform = Transform3D(-1.2, 0, -1.04907336e-07, 0, 1.2, 0, 1.04907336e-07, 0, -1.2, 0, 0, 0)
+
+[node name="Monster_Patrol0" type="Marker3D" parent="." unique_id=1729326514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -6)
+
+[node name="Monster_Patrol1" type="Marker3D" parent="." unique_id=2105665584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 4)
+
+[node name="Monster_Patrol2" type="Marker3D" parent="." unique_id=2137672929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 4)
+
+[node name="Monster_Patrol3" type="Marker3D" parent="." unique_id=146227594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -6)
+
+[node name="@OmniLight3D@29" type="OmniLight3D" parent="." unique_id=380685778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 4)
+light_color = Color(1, 0.8, 0.55, 1)
+light_energy = 0.8
+shadow_enabled = true
+omni_range = 9.0
+
+[node name="@OmniLight3D@30" type="OmniLight3D" parent="." unique_id=746136019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, -8)
+light_color = Color(1, 0.8, 0.55, 1)
+light_energy = 0.6
+shadow_enabled = true
+omni_range = 8.0
+
+[node name="Sign" type="Label3D" parent="." unique_id=175027729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 3, 5.5)
+pixel_size = 0.006
+billboard = 2
+text = "ห้อง 1 · มอนตาบอด หูดี (แบบ Janitor)
+พื้นไม้ = ดัง · พรม = เงียบ · วิ่ง = ดังมาก
+ขว้างของไปอีกทางเพื่อล่อ · ไปให้ถึงประตูฝั่งตรงข้าม"
+font = SubResource("SystemFont_c063q")
+font_size = 34
+outline_size = 8

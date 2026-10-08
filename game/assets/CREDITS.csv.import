@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://baqn8m2covkd7"
+
+[deps]
+
+files=["res://assets/CREDITS.type.translation", "res://assets/CREDITS.source.translation", "res://assets/CREDITS.url.translation", "res://assets/CREDITS.author.translation", "res://assets/CREDITS.license.translation", "res://assets/CREDITS.path.translation", "res://assets/CREDITS.downloaded.translation"]
+
+source_file="res://assets/CREDITS.csv"
+dest_files=["res://assets/CREDITS.type.translation", "res://assets/CREDITS.source.translation", "res://assets/CREDITS.url.translation", "res://assets/CREDITS.author.translation", "res://assets/CREDITS.license.translation", "res://assets/CREDITS.path.translation", "res://assets/CREDITS.downloaded.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true
